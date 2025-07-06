@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     title: "Blog | App Nest - Web Development Insights & Tips",
     description: "Latest insights, tips, and trends in web development, design, and digital marketing. Expert advice from App Nest developers.",
     type: "website",
-    url: "https://appnest.com/blog",
+    url: "https://app-nest.com/blog",
   },
   twitter: {
     card: "summary_large_image",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     follow: true,
   },
   alternates: {
-    canonical: "https://appnest.com/blog",
+    canonical: "https://app-nest.com/blog",
   },
 };
 

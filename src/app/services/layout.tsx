@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Web Development Services - React, Next.js & Custom Solutions",
     description: "Professional web development services including custom web apps, UI/UX design, e-commerce solutions, and SEO optimization. Starting from $3,000.",
-    url: "https://appnest.dev/services",
+    url: "https://app-nest.com/services",
     siteName: "AppNest",
     type: "website",
     images: [

@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Contact AppNest - Get Free Web Development Consultation",
     description: "Ready to transform your digital presence? Contact AppNest for expert web development services. Get a free consultation and custom quote within 24 hours.",
-    url: "https://appnest.dev/contact",
+    url: "https://app-nest.com/contact",
     siteName: "AppNest",
     type: "website",
     images: [

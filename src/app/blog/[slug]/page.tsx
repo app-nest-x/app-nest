@@ -713,10 +713,10 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
       type: 'article',
       publishedTime: post.date,
       authors: ['App Nest'],
-      url: `https://appnest.in/blog/${post.slug}`,
+      url: `https://app-nest.com/blog/${post.slug}`,
       images: [
         {
-          url: `https://appnest.in/og-image.jpg`,
+          url: `https://app-nest.com/og-image.jpg`,
           width: 1200,
           height: 630,
           alt: post.title,
@@ -727,7 +727,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
       card: 'summary_large_image',
       title: post.title,
       description: post.excerpt,
-      images: [`https://appnest.in/og-image.jpg`],
+      images: [`https://app-nest.com/og-image.jpg`],
     },
   };
 }
@@ -757,27 +757,27 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     author: {
       "@type": "Organization",
       name: "App Nest",
-      url: "https://appnest.in"
+              url: "https://app-nest.com"
     },
     publisher: {
       "@type": "Organization",
       name: "App Nest",
       logo: {
         "@type": "ImageObject",
-        url: "https://appnest.in/logo.png"
+                  url: "https://app-nest.com/logo.png"
       }
     },
     datePublished: post.date,
     dateModified: post.date,
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `https://appnest.in/blog/${slug}`
+              "@id": `https://app-nest.com/blog/${slug}`
     },
     wordCount: post.content.split(' ').length,
     timeRequired: post.readTime,
     inLanguage: "en-US",
-    url: `https://appnest.in/blog/${slug}`,
-    image: `https://appnest.in/og-image.jpg`
+              url: `https://app-nest.com/blog/${slug}`,
+              image: `https://app-nest.com/og-image.jpg`
   };
 
   return (

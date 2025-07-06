@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://appnest.dev/sitemap.xml
+Sitemap: https://app-nest.com/sitemap.xml
 
 # Block specific folders that shouldn't be indexed
 Disallow: /api/
