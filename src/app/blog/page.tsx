@@ -4,19 +4,24 @@ import Navigation from "../components/Navigation";
 import JsonLd from "../components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Blog | App Nest - Web Development Insights & Tips",
-  description: "Latest insights, tips, and trends in web development, design, and digital marketing. Expert advice from App Nest developers.",
-  keywords: "web development blog, Next.js tips, React tutorials, web design trends, digital marketing, SEO tips, website development India",
+  title: "Web Development Blog India | React Next.js Tips & Tutorials | App Nest",
+  description: "Latest web development insights, React tutorials, Next.js tips, and digital marketing strategies from India's leading web development experts. Expert advice for developers and businesses.",
+  keywords: [
+    "web development blog India", "React tutorials", "Next.js tips", "web development tips",
+    "JavaScript tutorials", "web design trends", "digital marketing India", "SEO tips",
+    "website development guide", "React development blog", "Next.js development tips",
+    "web performance optimization", "modern web development", "frontend development blog"
+  ],
   openGraph: {
-    title: "Blog | App Nest - Web Development Insights & Tips",
-    description: "Latest insights, tips, and trends in web development, design, and digital marketing. Expert advice from App Nest developers.",
+    title: "Web Development Blog India | React Next.js Tips & Tutorials | App Nest",
+    description: "Latest web development insights, React tutorials, Next.js tips, and digital marketing strategies from India's leading web development experts.",
     type: "website",
     url: "https://app-nest.com/blog",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Blog | App Nest - Web Development Insights & Tips",
-    description: "Latest insights, tips, and trends in web development, design, and digital marketing. Expert advice from App Nest developers.",
+    title: "Web Development Blog India | React Next.js Tips & Tutorials | App Nest",
+    description: "Latest web development insights, React tutorials, Next.js tips, and digital marketing strategies from India's leading web development experts.",
   },
   robots: {
     index: true,
@@ -69,6 +74,13 @@ const blogPosts = [
     excerpt: "Why minimalism is dominating web design in 2025 and how to implement clean, conversion-focused designs.",
     date: "2025-01-03",
     readTime: "7 min read"
+  },
+  {
+    slug: "best-web-development-company-india",
+    title: "Best Web Development Company in India 2025: Complete Guide",
+    excerpt: "Comprehensive guide to choosing the best web development company in India. Compare services, pricing, technologies, and expertise.",
+    date: "2025-01-01",
+    readTime: "12 min read"
   }
 ];
 
@@ -113,10 +125,10 @@ export default function BlogPage() {
     <>
       <JsonLd data={structuredData} />
       <Navigation />
-      
+
       <main className="min-h-screen pt-20">
         <div className="max-w-2xl mx-auto px-6">
-          
+
           {/* Header */}
           <header className="py-12">
             <h1 className="text-2xl font-medium mb-2">Writing</h1>
@@ -134,15 +146,15 @@ export default function BlogPage() {
                     <time className="text-xs text-muted-foreground font-mono">
                       {formatDate(post.date)}
                     </time>
-                    
+
                     <h2 className="text-lg font-medium leading-snug group-hover:text-muted-foreground transition-colors">
                       {post.title}
                     </h2>
-                    
+
                     <p className="text-muted-foreground text-sm leading-relaxed">
                       {post.excerpt}
                     </p>
-                    
+
                     <div className="flex items-center justify-between pt-1">
                       <span className="text-xs text-muted-foreground">
                         {post.readTime}

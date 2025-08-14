@@ -6,7 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "analyze": "ANALYZE=true next build",
+    "sitemap": "next build && next start",
+    "seo-audit": "lighthouse https://app-nest.com --output=html --output-path=./seo-audit.html --chrome-flags='--headless'",
+    "export": "next build && next export"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",

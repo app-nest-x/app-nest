@@ -1,32 +1,119 @@
+# Robots.txt for App Nest - Best Web Development Company India
+# https://app-nest.com
+
 User-agent: *
 Allow: /
 
-# Sitemap
+# Sitemap locations
 Sitemap: https://app-nest.com/sitemap.xml
+Sitemap: https://app-nest.com/blog-sitemap.xml
+Sitemap: https://app-nest.com/services-sitemap.xml
 
-# Block specific folders that shouldn't be indexed
+# Block specific folders and files that shouldn't be indexed
 Disallow: /api/
 Disallow: /_next/
 Disallow: /admin/
 Disallow: /.well-known/
+Disallow: /private/
+Disallow: /temp/
+Disallow: /cache/
+Disallow: /logs/
+Disallow: /*.json$
+Disallow: /*?*utm_*
+Disallow: /*?*ref=*
+Disallow: /*?*fbclid=*
+Disallow: /*?*gclid=*
 
-# Allow all images and static assets
+# Allow all images and static assets for better SEO
 Allow: /images/
 Allow: /assets/
+Allow: /static/
+Allow: /public/
 Allow: /favicon.ico
+Allow: /logo.png
+Allow: /og-image*.jpg
 Allow: /*.jpg$
+Allow: /*.jpeg$
 Allow: /*.png$
 Allow: /*.svg$
 Allow: /*.webp$
+Allow: /*.gif$
+Allow: /*.ico$
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.woff$
+Allow: /*.woff2$
+Allow: /*.ttf$
 
-# Allow important pages
+# Explicitly allow important pages for SEO
 Allow: /services
+Allow: /services/
 Allow: /about
 Allow: /portfolio
 Allow: /contact
 Allow: /blog
+Allow: /blog/
+Allow: /faq
 Allow: /privacy
 Allow: /terms
+Allow: /testimonials
+Allow: /pricing
 
-# Crawl delay
-Crawl-delay: 1 
+# Allow location-based pages for local SEO
+Allow: /web-development-mumbai
+Allow: /web-development-delhi
+Allow: /web-development-bangalore
+Allow: /web-development-chennai
+Allow: /web-development-pune
+Allow: /web-development-hyderabad
+
+# Allow technology pages
+Allow: /technologies/
+Allow: /industries/
+
+# Crawl delay for better server performance
+Crawl-delay: 1
+
+# Specific rules for major search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 2
+
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 2
+
+User-agent: YandexBot
+Allow: /
+Crawl-delay: 2
+
+# Block bad bots and scrapers
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MegaIndex
+Disallow: /
+
+# Host directive (helps with canonicalization)
+Host: https://app-nest.com 
