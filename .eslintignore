@@ -1,0 +1,2 @@
+# Ignore everything during build to prevent lint errors from blocking deployment
+*

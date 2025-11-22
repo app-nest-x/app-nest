@@ -1,0 +1,263 @@
+@import "tailwindcss";
+
+:root {
+  --background: #050505;
+  --foreground: #ffffff;
+  --surface: #0f0f0f;
+  --border: #27272a;
+  --primary: #ffffff;
+  --accent: #10b981;
+  /* Kept for subtle highlights, but main focus is monochrome */
+  --grid-color: rgba(255, 255, 255, 0.03);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-border: var(--border);
+  --color-primary: var(--primary);
+  --color-accent: var(--accent);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  /* We'll assume Inter or system default for now, but styled better */
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  background-image:
+    linear-gradient(var(--grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+}
+
+/* Utilities */
+.border-b-gradient {
+  border-bottom: 1px solid transparent;
+  border-image: linear-gradient(to right, transparent, var(--border), transparent) 1;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Premium Card Hover Effect */
+.hover-card {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hover-card:hover {
+  transform: translateY(-2px);
+  background-color: var(--surface);
+  border-color: #404040;
+}
+
+@keyframes pulse-slow {
+
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.7;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes pulse-slower {
+
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.6;
+    transform: scale(1.2);
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-pulse-slower {
+  animation: pulse-slower 12s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Aurora Effect */
+@keyframes aurora {
+  0% {
+    background-position: 50% 50%, 50% 50%;
+  }
+
+  100% {
+    background-position: 350% 50%, 350% 50%;
+  }
+}
+
+.aurora-bg {
+  background-image:
+    radial-gradient(at 100% 100%, rgba(72, 61, 139, 0.15) 0px, transparent 50%),
+    radial-gradient(at 0% 0%, rgba(65, 105, 225, 0.15) 0px, transparent 50%);
+  filter: blur(60px);
+  opacity: 0.6;
+}
+
+.noise-bg {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+}
+
+/* Spacer removed: footer underlay appears without extra whitespace */
+
+.underlay-band::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(160px 160px at var(--mx) var(--my), rgba(0, 0, 0, 0.12), transparent 60%);
+  mix-blend-mode: multiply;
+}
+
+.underlay-text {
+  position: relative;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.04em;
+  color: #000;
+  font-size: clamp(3rem, 20vw, 18rem);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+@media (min-width: 768px) {
+  .underlay-text {
+    letter-spacing: -0.02em;
+    font-size: clamp(6rem, 24vw, 18rem);
+  }
+}
+
+.underlay-text::before,
+.underlay-text::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.underlay-text::before {
+  color: #0a0a0a;
+}
+
+.underlay-text::after {
+  color: #000000;
+}
+
+.underlay-band[data-active="true"] .underlay-text::before {
+  animation: glitch-x 600ms infinite steps(2);
+}
+
+.underlay-band[data-active="true"] .underlay-text::after {
+  animation: glitch-y 700ms infinite steps(2);
+}
+
+@keyframes glitch-x {
+  0% {
+    transform: translateX(0);
+  }
+
+  20% {
+    transform: translateX(2px);
+  }
+
+  40% {
+    transform: translateX(-3px);
+  }
+
+  60% {
+    transform: translateX(1px);
+  }
+
+  80% {
+    transform: translateX(-2px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes glitch-y {
+  0% {
+    transform: translateY(0);
+  }
+
+  25% {
+    transform: translateY(1px);
+  }
+
+  50% {
+    transform: translateY(-2px);
+  }
+
+  75% {
+    transform: translateY(2px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.underlay-band::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  background-image: repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.08) 0 2px, transparent 2px 4px);
+  transform: translateX(0);
+}
+
+.underlay-band[data-active="true"]::before {
+  opacity: 1;
+  animation: band-glitch 900ms infinite steps(2);
+  mask-image: radial-gradient(220px 220px at var(--mx) var(--my), #000 55%, transparent 70%);
+}
+
+@keyframes band-glitch {
+  0% {
+    transform: translateX(0) skewX(0deg);
+  }
+
+  50% {
+    transform: translateX(6px) skewX(3deg);
+  }
+
+  100% {
+    transform: translateX(0) skewX(0deg);
+  }
+}
