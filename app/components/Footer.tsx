@@ -43,7 +43,7 @@ export default function Footer() {
                         <div className="grid grid-cols-2 gap-8 md:grid-cols-3">
                             {[
                                 { title: 'Sitemap', links: ['Home', 'Expertise', 'Method', 'Studio'] },
-                                { title: 'Socials', links: ['Twitter', 'LinkedIn', 'Instagram', 'GitHub'] },
+                                { title: 'Services', links: ['Mobile Development', 'Web Architecture', 'AI Solutions', 'Product Design'] },
                                 { title: 'Legal', links: ['Privacy Policy', 'Terms of Service', 'Cookie Policy'] },
                             ].map((column, idx) => (
                                 <motion.div
