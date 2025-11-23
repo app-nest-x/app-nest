@@ -43,7 +43,7 @@ export default function Hero() {
                         </span>
                     </motion.div>
 
-                    <h1 className="text-7xl font-medium leading-[0.9] tracking-tighter text-white md:text-9xl lg:text-[11rem]">
+                    <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-9xl xl:text-[11rem] font-medium leading-[0.9] tracking-tighter text-white">
                         <div className="overflow-hidden">
                             <motion.span
                                 initial={{ y: "100%" }}

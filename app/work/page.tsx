@@ -5,9 +5,18 @@ import Footer from '../components/Footer';
 import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion';
 import { useEffect, useState } from 'react';
 
-    const projects = [
+const projects = [
     {
         id: "001",
+        client: "NextRoadmap",
+        title: "AI Roadmap Generator",
+        year: "2025",
+        url: "https://nextroadmap.com",
+        scope: ["AI Generation", "Interactive UI", "Export Features"],
+        metrics: { roadmaps: "5K+", satisfaction: "98%", uptime: "99.9%" }
+    },
+    {
+        id: "002",
         client: "Zefaza",
         title: "E‑commerce Platform",
         year: "2025",
@@ -16,22 +25,13 @@ import { useEffect, useState } from 'react';
         metrics: { products: "1K+", conversions: "+12%", uptime: "99.9%" }
     },
     {
-        id: "002",
+        id: "003",
         client: "Playrito",
         title: "Turf Booking System",
         year: "2025",
         url: "https://playrito.com",
         scope: ["Slot Booking", "Payments", "Admin Panel"],
         metrics: { venues: "50+", bookings: "10K+", rating: "4.8/5" }
-    },
-    {
-        id: "003",
-        client: "Synaptix Robotics",
-        title: "Robotics + IoT Platform",
-        year: "2025",
-        url: "https://synaptixrobotics.com",
-        scope: ["Device Telemetry", "Cloud Control", "Dashboards"],
-        metrics: { devices: "2K+", latency: "<50ms", availability: "99.95%" }
     },
     {
         id: "004",
@@ -107,25 +107,25 @@ function ProjectRow({ project, index }: { project: typeof projects[0], index: nu
                 }}
             >
                 {/* Project Number & Client */}
-                <div className="flex items-baseline gap-8 mb-6">
-                    <span className="font-mono text-xs text-emerald-500 w-12">/{project.id}</span>
+                <div className="flex items-baseline gap-4 md:gap-8 mb-6">
+                    <span className="font-mono text-xs text-emerald-500 w-8 md:w-12">/{project.id}</span>
                     <div className="flex-1">
                         <motion.h3
-                            className="text-5xl md:text-7xl font-medium text-white mb-2"
+                            className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-medium text-white mb-2"
                             animate={{ x: isHovered ? 20 : 0 }}
                             transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
                         >
                             {project.client}
                         </motion.h3>
                         <motion.p
-                            className="text-xl text-gray-500"
+                            className="text-base md:text-xl text-gray-500"
                             animate={{ x: isHovered ? 20 : 0 }}
                             transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
                         >
                             {project.title}
                         </motion.p>
                     </div>
-                    <span className="font-mono text-sm text-gray-600">{project.year}</span>
+                    <span className="hidden sm:block font-mono text-sm text-gray-600">{project.year}</span>
                 </div>
 
                 {/* Scope - Revealed on hover */}
@@ -136,16 +136,16 @@ function ProjectRow({ project, index }: { project: typeof projects[0], index: nu
                         opacity: isHovered ? 1 : 0
                     }}
                     transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                    className="overflow-hidden ml-20"
+                    className="overflow-hidden ml-10 md:ml-20"
                 >
-                    <div className="flex gap-4 mb-8">
+                    <div className="flex flex-wrap gap-3 md:gap-4 mb-6 md:mb-8">
                         {project.scope.map((item, i) => (
                             <motion.span
                                 key={i}
                                 initial={{ opacity: 0, y: 10 }}
                                 animate={{ opacity: isHovered ? 1 : 0, y: isHovered ? 0 : 10 }}
                                 transition={{ duration: 0.2 }}
-                                className="px-4 py-2 border border-white/20 rounded-full text-xs uppercase tracking-wider text-white/60"
+                                className="px-3 md:px-4 py-1.5 md:py-2 border border-white/20 rounded-full text-[10px] md:text-xs uppercase tracking-wider text-white/60"
                             >
                                 {item}
                             </motion.span>
@@ -153,7 +153,7 @@ function ProjectRow({ project, index }: { project: typeof projects[0], index: nu
                     </div>
 
                     {/* Metrics */}
-                    <div className="grid grid-cols-3 gap-8 mb-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 mb-6">
                         {Object.entries(project.metrics).map(([key, value], i) => (
                             <motion.div
                                 key={key}
@@ -161,8 +161,8 @@ function ProjectRow({ project, index }: { project: typeof projects[0], index: nu
                                 animate={{ opacity: isHovered ? 1 : 0, y: isHovered ? 0 : 10 }}
                                 transition={{ duration: 0.2 }}
                             >
-                                <div className="text-2xl font-medium text-white">{value}</div>
-                                <div className="text-xs font-bold uppercase tracking-widest text-gray-600">{key}</div>
+                                <div className="text-xl md:text-2xl font-medium text-white">{value}</div>
+                                <div className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-gray-600">{key}</div>
                             </motion.div>
                         ))}
                     </div>
@@ -170,7 +170,7 @@ function ProjectRow({ project, index }: { project: typeof projects[0], index: nu
 
                 {/* Hover indicator */}
                 <motion.div
-                    className="absolute right-12 top-1/2 -translate-y-1/2"
+                    className="hidden md:flex absolute right-4 lg:right-12 top-1/2 -translate-y-1/2"
                     animate={{
                         opacity: isHovered ? 1 : 0,
                         x: isHovered ? 0 : -10
@@ -215,7 +215,7 @@ export default function Work() {
                             Case Studies
                         </span>
                     </div>
-                    <h1 className="text-6xl md:text-[10rem] font-medium leading-[0.85] tracking-tighter text-white">
+                    <h1 className="text-5xl sm:text-6xl md:text-8xl lg:text-[10rem] font-medium leading-[0.85] tracking-tighter text-white">
                         Selected <br />
                         <span className="text-gray-700">Work</span>
                     </h1>

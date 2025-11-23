@@ -30,7 +30,7 @@ export default function Contact() {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8 }}
                         >
-                            <h1 className="text-6xl md:text-8xl font-medium tracking-tighter text-white mb-12 leading-[0.9]">
+                            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-medium tracking-tighter text-white mb-12 leading-[0.9]">
                                 Let's <br />
                                 <span className="text-gray-600">collaborate.</span>
                             </h1>
@@ -69,7 +69,7 @@ export default function Contact() {
                                     </label>
                                     <input
                                         type="text"
-                                        className="w-full bg-transparent border-b border-white/20 py-4 text-2xl md:text-4xl text-white placeholder-white/30 focus:border-white focus:outline-none transition-all"
+                                        className="w-full bg-transparent border-b border-white/20 py-4 text-xl sm:text-2xl md:text-3xl lg:text-4xl text-white placeholder-white/30 focus:border-white focus:outline-none transition-all"
                                         placeholder="Rayan Khan"
                                     />
                                 </div>
@@ -80,7 +80,7 @@ export default function Contact() {
                                     </label>
                                     <input
                                         type="email"
-                                        className="w-full bg-transparent border-b border-white/20 py-4 text-2xl md:text-4xl text-white placeholder-white/30 focus:border-white focus:outline-none transition-all"
+                                        className="w-full bg-transparent border-b border-white/20 py-4 text-xl sm:text-2xl md:text-3xl lg:text-4xl text-white placeholder-white/30 focus:border-white focus:outline-none transition-all"
                                         placeholder="rayankhan@company.com"
                                     />
                                 </div>
@@ -95,7 +95,7 @@ export default function Contact() {
                                                 key={service.id}
                                                 type="button"
                                                 onClick={() => setSelectedService(service.id)}
-                                                className={`text-2xl md:text-4xl transition-colors duration-300 ${selectedService === service.id
+                                                className={`text-xl sm:text-2xl md:text-3xl lg:text-4xl transition-colors duration-300 ${selectedService === service.id
                                                     ? 'text-white'
                                                     : 'text-white/20 hover:text-white/60'
                                                     }`}
@@ -112,7 +112,7 @@ export default function Contact() {
                                     </label>
                                     <textarea
                                         rows={1}
-                                        className="w-full bg-transparent border-b border-white/20 py-4 text-2xl md:text-4xl text-white placeholder-white/30 focus:border-white focus:outline-none transition-all resize-none"
+                                        className="w-full bg-transparent border-b border-white/20 py-4 text-xl sm:text-2xl md:text-3xl lg:text-4xl text-white placeholder-white/30 focus:border-white focus:outline-none transition-all resize-none"
                                         placeholder="Project details, budget, timeline..."
                                         onInput={(e) => {
                                             const target = e.target as HTMLTextAreaElement;

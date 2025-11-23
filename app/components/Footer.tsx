@@ -22,7 +22,7 @@ export default function Footer() {
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
-                                className="text-4xl font-medium tracking-tight text-white md:text-6xl"
+                                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight text-white"
                             >
                                 Ready to build <br />
                                 <span className="text-gray-500">the extraordinary?</span>
@@ -33,14 +33,14 @@ export default function Footer() {
                                 initial={{ opacity: 0 }}
                                 whileInView={{ opacity: 1 }}
                                 viewport={{ once: true }}
-                                className="group flex items-center gap-4 text-xl text-white transition-colors hover:text-emerald-400"
+                                className="group flex items-center gap-4 text-lg sm:text-xl text-white transition-colors hover:text-emerald-400"
                             >
                                 <span className="border-b border-white/20 pb-1 group-hover:border-emerald-400">Start a conversation</span>
                                 <ArrowRight className="transition-transform group-hover:translate-x-2" />
                             </motion.a>
                         </div>
 
-                        <div className="grid grid-cols-2 gap-8 md:grid-cols-3">
+                        <div className="grid grid-cols-2 gap-6 sm:gap-8 md:grid-cols-3">
                             {[
                                 { title: 'Sitemap', links: ['Home', 'Expertise', 'Method', 'Studio'] },
                                 { title: 'Services', links: ['Mobile Development', 'Web Architecture', 'AI Solutions', 'Product Design'] },

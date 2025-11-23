@@ -111,11 +111,11 @@ function MetricCard({ metric, index }: { metric: typeof metrics[0], index: numbe
             transition={{ duration: 0.6 }}
             onMouseEnter={() => setIsRevealed(true)}
             onMouseLeave={() => setIsRevealed(false)}
-            className="relative border border-white/10 p-12 cursor-pointer group overflow-hidden"
+            className="relative border border-white/10 p-8 sm:p-10 md:p-12 cursor-pointer group overflow-hidden"
         >
             <div className="relative z-10">
                 <motion.div
-                    className="text-7xl md:text-8xl font-bold text-white mb-4 tabular-nums"
+                    className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-4 tabular-nums"
                     animate={{ scale: isRevealed ? 1.05 : 1 }}
                     transition={{ duration: 0.3 }}
                 >
@@ -222,7 +222,7 @@ export default function Studio() {
                         transition={{ duration: 0.6 }}
                         className="mb-20"
                     >
-                        <h1 className="text-7xl md:text-[12rem] font-bold leading-[0.8] tracking-tighter text-white mb-12">
+                        <h1 className="text-6xl sm:text-7xl md:text-9xl lg:text-[12rem] font-bold leading-[0.8] tracking-tighter text-white mb-12">
                             AppNest
                         </h1>
                         <div className="h-[1px] w-32 bg-white mx-auto mb-8" />
@@ -237,7 +237,7 @@ export default function Studio() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 0.6 }}
-                        className="grid grid-cols-3 gap-12 border-t border-white/10 pt-12"
+                        className="grid grid-cols-2 sm:grid-cols-3 gap-8 sm:gap-12 border-t border-white/10 pt-12"
                     >
                         {[
                             { num: "16", label: "Team" },
@@ -245,7 +245,7 @@ export default function Studio() {
                             { num: "100%", label: "Success" }
                         ].map((stat, i) => (
                             <div key={i} className="group">
-                                <div className="text-4xl md:text-5xl font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors tabular-nums">
+                                <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors tabular-nums">
                                     {stat.num}
                                 </div>
                                 <div className="text-xs font-bold uppercase tracking-widest text-gray-600">
@@ -280,9 +280,9 @@ export default function Studio() {
                     </motion.h2>
 
                     <div className="grid md:grid-cols-2 gap-px bg-white/10">
-        {metrics.map((metric, index) => (
-            <MetricCard key={index} metric={metric} index={0} />
-        ))}
+                        {metrics.map((metric, index) => (
+                            <MetricCard key={index} metric={metric} index={0} />
+                        ))}
                     </div>
                 </div>
             </section>
@@ -297,7 +297,7 @@ export default function Studio() {
                         className="grid lg:grid-cols-12 gap-16 mb-24"
                     >
                         <div className="lg:col-span-5">
-                            <h2 className="text-6xl md:text-7xl font-medium leading-[0.9] tracking-tighter text-white">
+                            <h2 className="text-5xl sm:text-6xl md:text-7xl font-medium leading-[0.9] tracking-tighter text-white">
                                 How We <br />
                                 <span className="text-gray-700">Work</span>
                             </h2>
@@ -311,9 +311,9 @@ export default function Studio() {
                     </motion.div>
 
                     <div className="space-y-2">
-        {philosophy.map((item, index) => (
-            <PhilosophyCard key={index} item={item} index={0} />
-        ))}
+                        {philosophy.map((item, index) => (
+                            <PhilosophyCard key={index} item={item} index={0} />
+                        ))}
                     </div>
                 </div>
             </section>
@@ -340,10 +340,10 @@ export default function Studio() {
                                 transition={{ duration: 0.5 }}
                                 className="bg-black p-16 text-center hover:bg-white/[0.02] transition-colors group"
                             >
-                                <div className="text-8xl font-bold text-white mb-6 group-hover:text-emerald-400 transition-colors tabular-nums">
+                                <div className="text-6xl sm:text-7xl md:text-8xl font-bold text-white mb-6 group-hover:text-emerald-400 transition-colors tabular-nums">
                                     {dept.count}
                                 </div>
-                                <div className="text-xl font-medium text-white mb-2">{dept.role}</div>
+                                <div className="text-lg sm:text-xl font-medium text-white mb-2">{dept.role}</div>
                                 <div className="font-mono text-xs text-gray-500">{dept.location}</div>
                             </motion.div>
                         ))}
@@ -356,7 +356,7 @@ export default function Studio() {
                         viewport={{ once: true }}
                         className="mt-32 text-center"
                     >
-                        <blockquote className="text-3xl md:text-5xl font-light text-white leading-tight max-w-4xl mx-auto">
+                        <blockquote className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-white leading-tight max-w-4xl mx-auto">
                             "Small team. <span className="text-gray-600">Big impact.</span> <br />
                             That's not a tagline. <span className="text-gray-600">It's a promise.</span>"
                         </blockquote>

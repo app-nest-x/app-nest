@@ -8,8 +8,8 @@ import { articles as ARTICLE_DATA } from './articles';
 import { useState } from 'react';
 
 const articles = ARTICLE_DATA.map((a, i) => ({
-  id: String(i + 1).padStart(3, '0'),
-  ...a,
+    id: String(i + 1).padStart(3, '0'),
+    ...a,
 }));
 
 const categories = ["All", ...Array.from(new Set(articles.map(a => a.category)))];
@@ -27,21 +27,21 @@ function ArticleRow({ article, index }: { article: typeof articles[0], index: nu
             onMouseLeave={() => setIsHovered(false)}
             className="group relative border-t border-white/10 py-12 transition-colors hover:bg-white/[0.02]"
         >
-            <div className="flex items-start gap-8">
+            <div className="flex flex-col sm:flex-row items-start gap-6 sm:gap-8">
                 {/* ID */}
-                <span className="font-mono text-xs text-gray-600 w-12 pt-2">{article.id}</span>
+                <span className="font-mono text-xs text-gray-600 w-12 pt-2 hidden sm:block">{article.id}</span>
 
                 {/* Content */}
-                <div className="flex-1">
+                <div className="flex-1 w-full">
                     <motion.h3
-                        className="text-3xl md:text-5xl font-medium text-white mb-3"
+                        className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-white mb-3"
                         animate={{ x: isHovered ? 10 : 0 }}
                         transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
                     >
                         <Link href={`/insights/${article.slug}`}>{article.title}</Link>
                     </motion.h3>
                     <motion.p
-                        className="text-lg text-gray-500 mb-6"
+                        className="text-base sm:text-lg text-gray-500 mb-6"
                         animate={{ x: isHovered ? 10 : 0 }}
                         transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
                     >
@@ -64,7 +64,7 @@ function ArticleRow({ article, index }: { article: typeof articles[0], index: nu
                                 initial={{ opacity: 0, x: -10 }}
                                 animate={{ opacity: isHovered ? 1 : 0, x: isHovered ? 0 : -10 }}
                                 transition={{ duration: 0.2 }}
-                            className="px-3 py-1 border border-emerald-500/30 rounded-full text-xs font-mono text-emerald-400"
+                                className="px-3 py-1 border border-emerald-500/30 rounded-full text-xs font-mono text-emerald-400"
                             >
                                 {topic}
                             </motion.span>
@@ -73,7 +73,7 @@ function ArticleRow({ article, index }: { article: typeof articles[0], index: nu
                 </div>
 
                 {/* Meta Info */}
-                <div className="flex flex-col items-end gap-4 pt-2">
+                <div className="flex sm:flex-col items-start sm:items-end gap-4 pt-2">
                     <div className="text-right">
                         <div className="text-xs font-bold uppercase tracking-widest text-white mb-1">
                             {article.category}
@@ -137,11 +137,11 @@ export default function Insights() {
                             Technical Journal
                         </span>
                     </div>
-                    <div className="flex flex-col md:flex-row justify-between items-end gap-16 mb-16">
-                        <h1 className="text-6xl md:text-[10rem] font-medium leading-[0.85] tracking-tighter text-white">
+                    <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8 md:gap-16 mb-16">
+                        <h1 className="text-5xl sm:text-6xl md:text-8xl lg:text-[10rem] font-medium leading-[0.85] tracking-tighter text-white">
                             Insights
                         </h1>
-                        <div className="text-right">
+                        <div className="text-left md:text-right">
                             <div className="text-5xl font-medium text-white mb-2">{filteredArticles.length}</div>
                             <div className="text-xs font-bold uppercase tracking-widest text-gray-600">Articles</div>
                         </div>
@@ -154,8 +154,8 @@ export default function Insights() {
                                 key={cat}
                                 onClick={() => setActiveCategory(cat)}
                                 className={`px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest whitespace-nowrap transition-colors ${activeCategory === cat
-                                        ? 'bg-white text-black'
-                                        : 'border border-white/20 text-gray-400 hover:border-white hover:text-white'
+                                    ? 'bg-white text-black'
+                                    : 'border border-white/20 text-gray-400 hover:border-white hover:text-white'
                                     }`}
                                 whileTap={{ scale: 0.95 }}
                             >

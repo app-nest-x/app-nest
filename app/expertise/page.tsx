@@ -130,12 +130,12 @@ function DomainCard({ domain, index }: { domain: typeof domains[0], index: numbe
                     rotateY: rotateYSpring,
                     transformStyle: "preserve-3d"
                 }}
-                className="border border-white/10 p-12 bg-black hover:border-emerald-500/30 transition-colors duration-300"
+                className="border border-white/10 p-6 sm:p-8 md:p-10 lg:p-12 bg-black hover:border-emerald-500/30 transition-colors duration-300"
             >
-                <div className="flex items-center justify-between mb-12">
+                <div className="flex items-center justify-between mb-8 sm:mb-10 md:mb-12">
                     <div>
                         <div className="font-mono text-xs text-emerald-500 mb-2">/{domain.code}</div>
-                        <h3 className="text-4xl font-medium text-white">{domain.name}</h3>
+                        <h3 className="text-2xl sm:text-3xl md:text-4xl font-medium text-white">{domain.name}</h3>
                     </div>
                     <motion.button
                         onClick={() => setIsExpanded(!isExpanded)}
@@ -152,7 +152,7 @@ function DomainCard({ domain, index }: { domain: typeof domains[0], index: numbe
                 </div>
 
                 {/* Capability Grid */}
-                <div className="grid grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
                     {domain.capabilities.map((cap, i) => (
                         <motion.div
                             key={i}
@@ -188,7 +188,7 @@ function DomainCard({ domain, index }: { domain: typeof domains[0], index: numbe
                     transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
                     className="overflow-hidden border-t border-white/10 mt-8"
                 >
-                    <div className="pt-8 grid grid-cols-3 gap-6">
+                    <div className="pt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                         <div>
                             <div className="text-3xl font-bold text-white mb-1">
                                 {domain.capabilities.reduce((sum, c) => sum + c.projects, 0)}
@@ -238,21 +238,21 @@ export default function Expertise() {
                             </span>
                         </div>
 
-                        <div className="grid lg:grid-cols-12 gap-16 mb-16">
+                        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 mb-16">
                             <div className="lg:col-span-7">
-                                <h1 className="text-6xl md:text-[9rem] font-medium leading-[0.85] tracking-tighter text-white">
+                                <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-[9rem] font-medium leading-[0.85] tracking-tighter text-white">
                                     Deep <br />
                                     <span className="text-gray-700">Expertise</span>
                                 </h1>
                             </div>
                             <div className="lg:col-span-5 flex flex-col justify-end">
-                                <p className="text-2xl font-light text-white leading-tight mb-12">
+                                <p className="text-xl sm:text-2xl font-light text-white leading-tight mb-8 sm:mb-12">
                                     We don't dabble. <br />
                                     <span className="text-gray-500">We master.</span>
                                 </p>
 
                                 {/* Circular Stats */}
-                                <div className="grid grid-cols-2 gap-8">
+                                <div className="grid grid-cols-2 gap-6 sm:gap-8">
                                     <div className="text-center">
                                         <CircularProgress value={97} size={100} />
                                         <div className="mt-4 text-xs font-bold uppercase tracking-widest text-gray-600">Avg Mastery</div>
